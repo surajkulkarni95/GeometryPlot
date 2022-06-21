@@ -15,3 +15,7 @@ struct Point
 };
 
 std::ostream& operator<<(std::ostream& oss, const Point& P);
+
+Point operator*(double scalar, const Point& point);
+
+Point operator*(const Point& point, double scalar);

@@ -1,13 +1,13 @@
 #pragma once
 
-#include "IShape.h"
+#include "SimpleShape.h"
 #include "Point.h"
 #include "TextWriter.h"
 
 #include <vector>
 #include <memory>
 
-class Polygon: public IShape
+class Polygon: public SimpleShape
 {
 public:
     Polygon(const std::vector<Point>& points);
@@ -20,16 +20,10 @@ public:
 
     void writeText(const std::string& fileName);
 
-    void scale(double scalingFactor);
-
-    void rotate(double angleInRadians, const Point& centreOfRotation);
-
 private:
-    std::vector<Point> points_;
     Point center_;
+    int n_;
 
     std::shared_ptr<TextWriter> textWriter_;
-
-    int n_;
 };
 

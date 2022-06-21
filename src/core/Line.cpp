@@ -36,18 +36,9 @@ void Line::writeParametric(const std::string& fileName)
 
 void Line::writeText(const std::string& fileName)
 {
-    if(!textWriter_)
-        textWriter_ = std::make_shared<TextWriter>(fileName, points_);
+    textWriter_ = std::make_shared<TextWriter>(fileName, points_);
 
     textWriter_->write();
-}
-
-void Line::scale(double scalingFactor)
-{
-}
-
-void Line::rotate(double angleInRadians, const Point& centreOfRotation)
-{
 }
 
 double Line::slope() const

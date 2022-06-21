@@ -7,12 +7,17 @@
 
 int main(int argc, char* argv[])
 {
-    Point P1(2, 1);
-    Point P2(20, 33);
+    Point P1(1, 1);
+    Point P2(0, 0);
     
+    Point P3(0, 0);
+
     Line line(P1, P2, 100);
     line.writeParametric("LineParameter.txt");
     line.writeText("LineText.txt");
+
+    line.rotate(M_PI/2, P3);
+    line.writeText("RotatedLine.txt");
 
     Point O(0, 0);
 

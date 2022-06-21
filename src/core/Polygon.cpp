@@ -3,7 +3,7 @@
 #include <cmath>
 
 Polygon::Polygon(const std::vector<Point>& points):
-    points_(points),
+    SimpleShape(points),
     n_(points.size())
 {
 }
@@ -29,16 +29,7 @@ void Polygon::writeParametric(const std::string& fileName)
 
 void Polygon::writeText(const std::string& fileName)
 {
-    if(!textWriter_)
-        textWriter_ = std::make_shared<TextWriter>(fileName, points_);
+    textWriter_ = std::make_shared<TextWriter>(fileName, points_);
 
     textWriter_->write();
-}
-
-void Polygon::rotate(double angleInRadians, const Point& centerOfRotation)
-{
-}
-
-void Polygon::scale(double scalingFactor)
-{
 }

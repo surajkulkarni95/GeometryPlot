@@ -19,3 +19,11 @@ std::ostream& operator<<(std::ostream& oss, const Point& P)
     oss  << P.x << ", " << P.y;
     return oss;
 }
+
+Point operator*(double scalar, const Point& point) {
+    return Point(scalar*point.x, scalar*point.y);    
+}
+
+Point operator*(const Point& point, double scalar) {
+    return scalar*point;    
+}

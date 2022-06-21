@@ -30,16 +30,7 @@ void Circle::writeParametric(const std::string& fileName)
 
 void Circle::writeText(const std::string& fileName)
 {
-    if(!textWriter_)
-        textWriter_ = std::make_shared<TextWriter>(fileName, points_);
+    textWriter_ = std::make_shared<TextWriter>(fileName, points_);
 
     textWriter_->write();
-}
-
-void Circle::scale(double scalingFactor)
-{
-}
-
-void Circle::rotate(double angleInRadians, const Point& centerOfRotation)
-{
 }

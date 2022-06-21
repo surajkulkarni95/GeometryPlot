@@ -10,7 +10,7 @@ add_executable(sketcher src/sketcher/main.cpp)
 
 add_library(writer SHARED src/writer/ParametricWriter.cpp src/writer/TextWriter.cpp)
 
-add_library(core SHARED src/core/Point.cpp src/core/Line.cpp src/core/Circle.cpp src/core/Polygon.cpp)
+add_library(core SHARED src/core/Point.cpp src/core/Line.cpp src/core/Circle.cpp src/core/Polygon.cpp src/core/SimpleShape.cpp)
 
 target_link_libraries(core writer)
 target_link_libraries(sketcher core)
