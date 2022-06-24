@@ -1,15 +1,17 @@
 #include "Circle.h"
 #include "Point.h"
+#include "Constants.h"
 
 #include <vector>
 #include <cmath>
+
 
 Circle::Circle(const Point& center, double radius, int divisions):
     center_(center),
     radius_(radius),
     divisions_(divisions)
 {
-    double dTheta = (2*M_PI)/divisions_;
+    double dTheta = (2*constants::pi)/divisions_;
 
     for(int i = 0; i < divisions_; ++i)
     {

@@ -2,8 +2,10 @@
 #include "Circle.h"
 #include "Point.h"
 #include "Polygon.h"
+#include "Constants.h"
 
 #include <cmath>
+
 
 int main(int argc, char* argv[])
 {
@@ -16,7 +18,7 @@ int main(int argc, char* argv[])
     line.writeParametric("LineParameter.txt");
     line.writeText("LineText.txt");
 
-    line.rotate(M_PI/2, P3);
+    line.rotate(constants::pi/2, P3);
     line.writeText("RotatedLine.txt");
 
     Point O(0, 0);
@@ -24,9 +26,12 @@ int main(int argc, char* argv[])
     Circle circle(O, 5, 100);
     circle.writeParametric("CircleParameter.txt");
     circle.writeText("CircleText.txt");
+    circle.tessellate();
+    circle.writeSTL("circle.stl", "circle");
 
-    Polygon hexagon(O, 6, 2.5, M_PI/6);
+    Polygon hexagon(O, 12, 2.5, constants::pi/6);
     hexagon.writeText("HexagonText.txt");
-
+    hexagon.tessellate();
+    hexagon.writeSTL("hexagon.stl", "hexagon");
     return 0;
 }

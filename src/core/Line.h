@@ -5,11 +5,12 @@
 
 #include "ParametricWriter.h"
 #include "TextWriter.h"
+#include "shared_EXPORTS.h"
 
 #include <memory>
 #include <vector>
 
-class Line: public SimpleShape
+class SHARED_EXPORT Line: public SimpleShape
 {
 public:
     Line(const Point& P1, const Point& P2, int divisions = 1);

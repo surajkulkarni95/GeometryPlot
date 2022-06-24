@@ -1,4 +1,5 @@
 #include "TextWriter.h"
+#include "PrintPoint.h"
 
 #include <fstream>
 #include <ostream>

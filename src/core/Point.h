@@ -1,21 +1,22 @@
 #pragma once
 
 #include <ostream>
+#include <sstream>
 
-struct Point
+#include "shared_EXPORTS.h"
+
+struct SHARED_EXPORT Point
 {
     double x;
     double y;
 
-    Point() = default;
+    Point();
     Point(double X, double Y);
 
     Point operator+(const Point& P);
     Point operator-(const Point& P);
 };
 
-std::ostream& operator<<(std::ostream& oss, const Point& P);
+SHARED_EXPORT Point operator*(double scalar, const Point& point);
 
-Point operator*(double scalar, const Point& point);
-
-Point operator*(const Point& point, double scalar);
+SHARED_EXPORT Point operator*(const Point& point, double scalar);

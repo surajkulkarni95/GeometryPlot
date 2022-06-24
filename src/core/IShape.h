@@ -2,7 +2,9 @@
 
 #include "Point.h"
 
-class IShape
+#include "shared_EXPORTS.h"
+
+class SHARED_EXPORT IShape
 {
 public:
     virtual void writeParametric(const std::string& fileName) = 0;

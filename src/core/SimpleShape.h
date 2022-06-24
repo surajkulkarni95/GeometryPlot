@@ -3,9 +3,11 @@
 #include "IShape.h"
 #include "Point.h"
 
+#include "shared_EXPORTS.h"
+
 #include <vector>
 
-class SimpleShape: public IShape
+class SHARED_EXPORT SimpleShape: public IShape
 {
 public:
     SimpleShape() = default;

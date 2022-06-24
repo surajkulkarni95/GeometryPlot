@@ -1,15 +1,17 @@
 #pragma once
 
-#include "SimpleShape.h"
+#include "ClosedShape.h"
 #include "Point.h"
 
 #include "ParametricWriter.h"
 #include "TextWriter.h"
 
+#include "shared_EXPORTS.h"
+
 #include <memory>
 #include <vector>
 
-class Circle: public SimpleShape
+class SHARED_EXPORT Circle: public ClosedShape
 {
 public:
     Circle(const Point& center, double radius, int divisions = 8);

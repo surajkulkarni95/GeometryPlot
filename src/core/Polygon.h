@@ -1,13 +1,15 @@
 #pragma once
 
-#include "SimpleShape.h"
+#include "ClosedShape.h"
 #include "Point.h"
 #include "TextWriter.h"
+
+#include "shared_EXPORTS.h"
 
 #include <vector>
 #include <memory>
 
-class Polygon: public SimpleShape
+class SHARED_EXPORT Polygon: public ClosedShape
 {
 public:
     Polygon(const std::vector<Point>& points);

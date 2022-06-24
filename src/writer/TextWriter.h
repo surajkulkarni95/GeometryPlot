@@ -2,12 +2,14 @@
 
 #include "IWriter.h"
 #include "Point.h"
+#include "shared_EXPORTS.h"
+
 
 #include <string>
 #include <sstream>
 #include <vector>
 
-class TextWriter: public IWriter
+class SHARED_EXPORT TextWriter: public IWriter
 {
 public:
     TextWriter(const std::string& fileName, const std::vector<Point>& points);

@@ -1,18 +1,20 @@
 #include "Polygon.h"
+#include "Constants.h"
 
-#include <cmath>
+#include <math.h>
 
 Polygon::Polygon(const std::vector<Point>& points):
-    SimpleShape(points),
+    ClosedShape(points),
     n_(points.size())
 {
+
 }
 
 Polygon::Polygon(const Point& center, int numberOfSides, double side, double angleWrtXAxis):
     center_(center),
     n_(numberOfSides)
 {
-    double dTheta = 2*M_PI/n_;
+    double dTheta = (2*constants::pi)/n_;
     
     double radius = side/(2.*std::sin(dTheta/2.));
 
@@ -20,6 +22,7 @@ Polygon::Polygon(const Point& center, int numberOfSides, double side, double ang
     {
         points_.emplace_back(Point(center_.x + radius*std::cos(angleWrtXAxis+i*dTheta),
             center_.y + radius*std::sin(angleWrtXAxis+i*dTheta)));
+
     }
 }
 
