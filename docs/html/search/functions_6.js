@@ -1,0 +1,7 @@
+var searchData=
+[
+  ['operator_2a_0',['operator*',['../_point_8cpp.html#a271a68e1f77fba9bfeb2e8e09f839277',1,'operator*(double scalar, const Point &amp;point):&#160;Point.cpp'],['../_point_8cpp.html#ad4976827b95d5f8738dadc92424c5862',1,'operator*(const Point &amp;point, double scalar):&#160;Point.cpp'],['../_point_8h.html#ad41bcc637a835570ac5737d35198a829',1,'operator*(double scalar, const Point &amp;point):&#160;Point.cpp'],['../_point_8h.html#aef4798790da77a0fb3427d968e20b8f1',1,'operator*(const Point &amp;point, double scalar):&#160;Point.cpp']]],
+  ['operator_2b_1',['operator+',['../struct_point.html#a02630b584fbba1c36824aff202ef0438',1,'Point']]],
+  ['operator_2d_2',['operator-',['../struct_point.html#a57f06b78cf85afb8af8fb10c814400ab',1,'Point']]],
+  ['operator_3c_3c_3',['operator&lt;&lt;',['../_print_point_8cpp.html#a7b27007976c051a27c146047700707f2',1,'operator&lt;&lt;(std::ostream &amp;os, const Point &amp;P):&#160;PrintPoint.cpp'],['../_print_point_8cpp.html#a4451098d9a30e4e871683d0ac90f2ba7',1,'operator&lt;&lt;(std::ostringstream &amp;oss, const Point &amp;P):&#160;PrintPoint.cpp'],['../_print_point_8h.html#a73e70a8bceae15b5a69c4311878ca4ee',1,'operator&lt;&lt;(std::ostream &amp;os, const Point &amp;P):&#160;PrintPoint.cpp'],['../_print_point_8h.html#a2865207fbfd6a48f359511c6521519fa',1,'operator&lt;&lt;(std::ostringstream &amp;oss, const Point &amp;P):&#160;PrintPoint.cpp']]]
+];
