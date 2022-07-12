@@ -4,7 +4,8 @@
 #include <vector>
 #include <cmath>
 
-Line::Line(const Point& P1, const Point& P2, int divisions):
+
+geom::Line::Line(const Point& P1, const Point& P2, int divisions):
     P1_(P1),
     P2_(P2),
     divisions_(divisions)
@@ -18,10 +19,10 @@ Line::Line(const Point& P1, const Point& P2, int divisions):
     }
 }
 
-Line::~Line()
+geom::Line::~Line()
 {}
 
-void Line::writeParametric(const std::string& fileName)
+void geom::Line::writeParametric(const std::string& fileName)
 {
     if(!parametricWriter_)
         parametricWriter_ = std::make_shared<ParametricWriter>(fileName);
@@ -34,19 +35,19 @@ void Line::writeParametric(const std::string& fileName)
     parametricWriter_->write();
 }
 
-void Line::writeText(const std::string& fileName)
+void geom::Line::writeText(const std::string& fileName)
 {
     textWriter_ = std::make_shared<TextWriter>(fileName, points_);
 
     textWriter_->write();
 }
 
-double Line::slope() const
+double geom::Line::slope() const
 {
     return (P2_.y - P1_.y)/(P2_.x - P1_.x + 1.e-15);
 }
 
-double Line::intercept() const
+double geom::Line::intercept() const
 {
     double m = slope();
     return P1_.y - m*P1_.x;

@@ -2,19 +2,20 @@
 
 #include <cmath>
 
-SimpleShape::SimpleShape(const std::vector<Point>& points):
+
+geom::SimpleShape::SimpleShape(const std::vector<Point>& points):
     points_(points)
 {    
 }
 
-void SimpleShape::scale(double scalingFactor) {
+void geom::SimpleShape::scale(double scalingFactor) {
     for(int i = 0; i < points_.size(); ++i)
     {
         points_[i] = scalingFactor*points_[i];
     }
 }
 
-void SimpleShape::rotate(double angleInRadians, const Point& centreOfRotation) {
+void geom::SimpleShape::rotate(double angleInRadians, const Point& centreOfRotation) {
     for(int i = 0; i < points_.size(); ++i)
     {
         points_[i] = points_[i] - centreOfRotation;

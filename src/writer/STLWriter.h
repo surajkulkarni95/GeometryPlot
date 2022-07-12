@@ -10,10 +10,15 @@
 #include <sstream>
 #include <memory>
 
+#include "poly2tri.h"
+
+namespace geom
+{
+
 class SHARED_EXPORT STLWriter: public IWriter
 {
 public:
-	STLWriter(const std::string& fileName, const std::vector<Triangle>& triangles, const std::string& solidName = "Solid1");
+	STLWriter(const std::string& fileName, const std::vector<p2t::Triangle*>& triangles, const std::string& solidName = "Solid1");
 	void write() override;
 
 private:
@@ -21,5 +26,7 @@ private:
 	std::string file_;
 	std::string solidName_;
 
-	const std::vector<Triangle>& triangles_;
+	const std::vector<p2t::Triangle*>& triangles_;
 };
+
+}

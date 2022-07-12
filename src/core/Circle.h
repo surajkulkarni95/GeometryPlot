@@ -11,6 +11,9 @@
 #include <memory>
 #include <vector>
 
+namespace geom
+{
+
 class SHARED_EXPORT Circle: public ClosedShape
 {
 public:
@@ -31,3 +34,5 @@ private:
     std::shared_ptr<ParametricWriter> parametricWriter_;
     std::shared_ptr<TextWriter> textWriter_;
 };
+
+}

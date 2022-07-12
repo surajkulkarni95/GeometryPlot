@@ -3,14 +3,15 @@
 
 #include <math.h>
 
-Polygon::Polygon(const std::vector<Point>& points):
+
+geom::Polygon::Polygon(const std::vector<Point>& points):
     ClosedShape(points),
     n_(points.size())
 {
 
 }
 
-Polygon::Polygon(const Point& center, int numberOfSides, double side, double angleWrtXAxis):
+geom::Polygon::Polygon(const Point& center, int numberOfSides, double side, double angleWrtXAxis):
     center_(center),
     n_(numberOfSides)
 {
@@ -26,11 +27,11 @@ Polygon::Polygon(const Point& center, int numberOfSides, double side, double ang
     }
 }
 
-void Polygon::writeParametric(const std::string& fileName)
+void geom::Polygon::writeParametric(const std::string& fileName)
 {
 }
 
-void Polygon::writeText(const std::string& fileName)
+void geom::Polygon::writeText(const std::string& fileName)
 {
     textWriter_ = std::make_shared<TextWriter>(fileName, points_);
 

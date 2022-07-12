@@ -4,6 +4,11 @@
 
 #include "shared_EXPORTS.h"
 
+#include <string>
+
+namespace geom
+{
+
 class SHARED_EXPORT IShape
 {
 public:
@@ -15,3 +20,5 @@ public:
 
     virtual void rotate(double angleInRadians, const Point& centreOfRotation) = 0;
 };
+
+}

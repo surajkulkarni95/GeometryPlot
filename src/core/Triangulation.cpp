@@ -2,20 +2,21 @@
 
 #include "Triangulation.h"
 
+using geom::Triangle;
 
-double determinant(Vector2f u, Vector2f v) // basic determinant formula : det(u(x,y) , v(x',y') ) = xy'-x'y 
+double geom::determinant(Vector2f u, Vector2f v) // basic determinant formula : det(u(x,y) , v(x',y') ) = xy'-x'y 
 {
 	double result = u.x * v.y - u.y * v.x;
 	return result;
 }
 
-double Distance(Vector2f const& v1, Vector2f const& v2) // basic distance formula : dist(u(x,y) , v(x',y') ) = sqrt( (x'-x)^2 + (y'-y)^2 )
+double geom::Distance(Vector2f const& v1, Vector2f const& v2) // basic distance formula : dist(u(x,y) , v(x',y') ) = sqrt( (x'-x)^2 + (y'-y)^2 )
 {
 	double distance = std::sqrt(std::pow((v2.x - v1.x), 2) + std::pow((v2.y - v1.y), 2));
 	return distance;
 }
 
-bool collisionTrianglePoint(Vector2f a, Vector2f b, Vector2f c, Vector2f point) // checks if a point is within the triangle ABC : the point must be at the left of each edge -> be careful to the winding direction
+bool geom::collisionTrianglePoint(Vector2f a, Vector2f b, Vector2f c, Vector2f point) // checks if a point is within the triangle ABC : the point must be at the left of each edge -> be careful to the winding direction
 {
 	Vector2f ab = b - a;
 	Vector2f bc = c - b;
@@ -28,7 +29,7 @@ bool collisionTrianglePoint(Vector2f a, Vector2f b, Vector2f c, Vector2f point) 
 	else return false;
 }
 
-vector<Triangle> triangulate(vector<Vector2f> points) // the ear clipping algorithm
+vector<Triangle> geom::triangulate(vector<Vector2f> points) // the ear clipping algorithm
 {
 	vector<Triangle> triangles; /* a dynamic array that will store the points of the triangles : if the triangle n is (An Bn Cn), then the points will be stored as [A1,B1,C1,
 																																									  A2,B2,C2,

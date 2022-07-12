@@ -4,13 +4,13 @@
 #include <fstream>
 #include <ostream>
 
-TextWriter::TextWriter(const std::string& fileName, const std::vector<Point>& points):
+geom::TextWriter::TextWriter(const std::string& fileName, const std::vector<Point>& points):
     file_(fileName),
     output_(),
     points_(points)
 {}
 
-void TextWriter::write()
+void geom::TextWriter::write()
 {
     std::ofstream of(file_, std::ios::out);
 

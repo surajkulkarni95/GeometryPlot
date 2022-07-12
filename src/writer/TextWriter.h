@@ -9,6 +9,9 @@
 #include <sstream>
 #include <vector>
 
+namespace geom
+{
+
 class SHARED_EXPORT TextWriter: public IWriter
 {
 public:
@@ -22,3 +25,5 @@ private:
 
     const std::vector<Point>& points_;
 };
+
+}

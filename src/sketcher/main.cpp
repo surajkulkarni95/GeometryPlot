@@ -6,6 +6,7 @@
 
 #include <cmath>
 
+using namespace geom;
 
 int main(int argc, char* argv[])
 {

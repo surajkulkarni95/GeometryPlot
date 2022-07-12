@@ -10,6 +10,9 @@
 #include <memory>
 #include <vector>
 
+namespace geom
+{
+
 class SHARED_EXPORT Line: public SimpleShape
 {
 public:
@@ -17,9 +20,9 @@ public:
 
     virtual ~Line();
 
-    void writeParametric(const std::string& fileName) override;
+    void writeParametric(const std::string& fileName);
 
-    void writeText(const std::string& fileName) override;
+    void writeText(const std::string& fileName);
 
     double slope() const;
 
@@ -29,8 +32,10 @@ private:
     Point P2_;
     Point P1_;
 
-    std::shared_ptr<ParametricWriter> parametricWriter_;
-    std::shared_ptr<TextWriter> textWriter_;
+    std::shared_ptr<geom::ParametricWriter> parametricWriter_;
+    std::shared_ptr<geom::TextWriter> textWriter_;
 
     int divisions_;
 };
+
+}

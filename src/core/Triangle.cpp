@@ -1,12 +1,11 @@
 #include "Triangle.h"
 
-
-double Triangle::sign(Point p1, Point p2, Point p3)
+double geom::Triangle::sign(Point p1, Point p2, Point p3)
 {
     return (p1.x - p3.x) * (p2.y - p3.y) - (p2.x - p3.x) * (p1.y - p3.y);
 }
 
-bool Triangle::pointInTriangle(const Point& pt)
+bool geom::Triangle::pointInTriangle(const Point& pt)
 {
     double d1, d2, d3;
     bool has_neg, has_pos;

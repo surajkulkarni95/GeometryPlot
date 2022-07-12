@@ -6,7 +6,7 @@
 #include <cmath>
 
 
-Circle::Circle(const Point& center, double radius, int divisions):
+geom::Circle::Circle(const Point& center, double radius, int divisions):
     center_(center),
     radius_(radius),
     divisions_(divisions)
@@ -19,7 +19,7 @@ Circle::Circle(const Point& center, double radius, int divisions):
     }
 }
 
-void Circle::writeParametric(const std::string& fileName)
+void geom::Circle::writeParametric(const std::string& fileName)
 {
     if(!parametricWriter_)
         parametricWriter_ = std::make_shared<ParametricWriter>(fileName);
@@ -30,7 +30,7 @@ void Circle::writeParametric(const std::string& fileName)
     parametricWriter_->write();
 }
 
-void Circle::writeText(const std::string& fileName)
+void geom::Circle::writeText(const std::string& fileName)
 {
     textWriter_ = std::make_shared<TextWriter>(fileName, points_);
 

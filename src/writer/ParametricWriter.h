@@ -9,6 +9,9 @@
 #include <string>
 #include <sstream>
 
+namespace geom
+{
+
 class SHARED_EXPORT ParametricWriter: public IWriter
 {
 public:
@@ -20,11 +23,12 @@ public:
         output_ << name << " = " << parameter << std::endl;
     }
 
-    template<>
+    /*template<>
     void addParameter(const std::string& name, const Point& point)
     {
         output_ << name << " = " << point << std::endl;
     }
+    */
 
     void write() override;
 
@@ -32,3 +36,5 @@ private:
     std::ostringstream output_;
     std::string file_;
 };
+
+}

@@ -9,6 +9,9 @@
 #include <vector>
 #include <memory>
 
+namespace geom
+{
+
 class SHARED_EXPORT ClosedShape: public SimpleShape
 {
 public:
@@ -22,8 +25,10 @@ public:
 	virtual void writeSTL(const std::string& fileName, const std::string& solidName = "Solid1");
 
 protected:
-	std::vector<Triangle> triangles_;
+	std::vector<p2t::Triangle*> triangles_;
 
 private:
 	std::unique_ptr<STLWriter> STLWriter_;
 };
+
+}

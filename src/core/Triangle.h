@@ -3,6 +3,9 @@
 #include "Point.h"
 #include "shared_EXPORTS.h"
 
+namespace geom
+{
+
 struct SHARED_EXPORT Triangle
 {
 	Triangle(const Point& p1, const Point& p2, const Point& p3, const Point& n = Point()) :
@@ -16,3 +19,5 @@ struct SHARED_EXPORT Triangle
 private:
 	double sign(Point p1, Point p2, Point p3);
 };
+
+}

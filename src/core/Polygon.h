@@ -9,6 +9,9 @@
 #include <vector>
 #include <memory>
 
+namespace geom
+{
+
 class SHARED_EXPORT Polygon: public ClosedShape
 {
 public:
@@ -28,4 +31,6 @@ private:
 
     std::shared_ptr<TextWriter> textWriter_;
 };
+
+}
 

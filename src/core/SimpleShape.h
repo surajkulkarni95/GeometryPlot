@@ -7,6 +7,9 @@
 
 #include <vector>
 
+namespace geom
+{
+
 class SHARED_EXPORT SimpleShape: public IShape
 {
 public:
@@ -23,3 +26,5 @@ public:
 protected:
     std::vector<Point> points_;
 };
+
+}
