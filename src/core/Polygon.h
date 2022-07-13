@@ -15,18 +15,18 @@ namespace geom
 class SHARED_EXPORT Polygon: public ClosedShape
 {
 public:
-    Polygon(const std::vector<Point>& points);
+    Polygon(const std::vector<p2t::Point*>& points);
 
-    Polygon(const Point& center, int numberOfSides, double side, double angleWrtXAxis = 0.);
+    Polygon(const p2t::Point& center, int numberOfSides, double side, double angleWrtXAxis = 0.);
     
     virtual ~Polygon() = default;
 
-    void writeParametric(const std::string& fileName);
+    void writeParametric(const std::string& fileName) override;
 
-    void writeText(const std::string& fileName);
+    void writeText(const std::string& fileName) override;
 
 private:
-    Point center_;
+    p2t::Point center_;
     int n_;
 
     std::shared_ptr<TextWriter> textWriter_;

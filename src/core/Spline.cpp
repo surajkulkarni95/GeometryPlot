@@ -1,7 +1,7 @@
 #include "Spline.h"
 
 
-geom::Spline::Spline(const std::vector<Point>& points):
+geom::Spline::Spline(const std::vector<p2t::Point*>& points):
 	SimpleShape(points),
 	order_(points.size() - 1)
 {

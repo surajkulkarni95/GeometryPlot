@@ -5,7 +5,7 @@
 #include <cmath>
 
 
-geom::Line::Line(const Point& P1, const Point& P2, int divisions):
+geom::Line::Line(const p2t::Point& P1, const p2t::Point& P2, int divisions):
     P1_(P1),
     P2_(P2),
     divisions_(divisions)
@@ -15,7 +15,7 @@ geom::Line::Line(const Point& P1, const Point& P2, int divisions):
 
     for(int i = 0; i < divisions_+1; ++i)
     {
-        points_.emplace_back(Point(P1_.x + i*dX, P1_.y + i*dY));
+        points_.emplace_back(new p2t::Point(P1_.x + i*dX, P1_.y + i*dY));
     }
 }
 

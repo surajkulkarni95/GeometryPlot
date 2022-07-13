@@ -17,7 +17,7 @@ namespace geom
 class SHARED_EXPORT Circle: public ClosedShape
 {
 public:
-    Circle(const Point& center, double radius, int divisions = 8);
+    Circle(const p2t::Point& center, double radius, int divisions = 8);
 
     virtual ~Circle() = default;
 
@@ -26,7 +26,7 @@ public:
     void writeText(const std::string& fileName) override;
 
 private:
-    Point center_;
+    p2t::Point center_;
     double radius_;
 
     int divisions_;

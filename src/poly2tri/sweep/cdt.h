@@ -37,6 +37,8 @@
 
 #include "../common/dll_symbol.h"
 
+#include <memory>
+
 /**
  *
  * @author Mason Green <mason.green@gmail.com>
@@ -96,8 +98,8 @@ public:
    * Internals
    */
 
-  SweepContext* sweep_context_;
-  Sweep* sweep_;
+  std::unique_ptr<SweepContext> sweep_context_;
+  std::unique_ptr<Sweep> sweep_;
 
 };
 

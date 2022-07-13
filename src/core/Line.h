@@ -16,7 +16,7 @@ namespace geom
 class SHARED_EXPORT Line: public SimpleShape
 {
 public:
-    Line(const Point& P1, const Point& P2, int divisions = 1);
+    Line(const p2t::Point& P1, const p2t::Point& P2, int divisions = 1);
 
     virtual ~Line();
 
@@ -29,8 +29,8 @@ public:
     double intercept() const;
 
 private:
-    Point P2_;
-    Point P1_;
+    p2t::Point P2_;
+    p2t::Point P1_;
 
     std::shared_ptr<geom::ParametricWriter> parametricWriter_;
     std::shared_ptr<geom::TextWriter> textWriter_;

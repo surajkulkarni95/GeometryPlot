@@ -14,7 +14,7 @@ std::ostringstream& geom::operator<<(std::ostringstream& oss, const Point& P)
 
 std::ostream& geom::operator<<(std::ostream& out, const p2t::Point& point) 
 {
-    return out << point.x << "," << point.y;
+    return out << point.x << " " << point.y << " " << 0.;
 }
 
 std::ostringstream& geom::operator<<(std::ostringstream& oss, const p2t::Point& P)

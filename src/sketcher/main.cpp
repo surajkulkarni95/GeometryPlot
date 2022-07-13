@@ -3,10 +3,15 @@
 #include "Point.h"
 #include "Polygon.h"
 #include "Constants.h"
+#include "poly2tri.h"
 
 #include <cmath>
 
-using namespace geom;
+using p2t::Point;
+using geom::Line;
+using geom::Circle;
+using geom::Polygon;
+
 
 int main(int argc, char* argv[])
 {
@@ -27,12 +32,10 @@ int main(int argc, char* argv[])
     Circle circle(O, 5, 100);
     circle.writeParametric("CircleParameter.txt");
     circle.writeText("CircleText.txt");
-    circle.tessellate();
     circle.writeSTL("circle.stl", "circle");
 
     Polygon hexagon(O, 12, 2.5, constants::pi/6);
     hexagon.writeText("HexagonText.txt");
-    hexagon.tessellate();
     hexagon.writeSTL("hexagon.stl", "hexagon");
     return 0;
 }

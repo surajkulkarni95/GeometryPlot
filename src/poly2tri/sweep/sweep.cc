@@ -57,6 +57,7 @@ void Sweep::SweepPoints(SweepContext& tcx)
     for (auto& j : point.edge_list) {
       EdgeEvent(tcx, j, node);
     }
+    //EdgeEvent(tcx, point.edge, node);
   }
 }
 

@@ -1,6 +1,7 @@
 #pragma once
 
 #include "Point.h"
+#include "poly2tri.h"
 
 #include "shared_EXPORTS.h"
 
@@ -18,7 +19,7 @@ public:
 
     virtual void scale(double scalingFactor) = 0;
 
-    virtual void rotate(double angleInRadians, const Point& centreOfRotation) = 0;
+    virtual void rotate(double angleInRadians, const p2t::Point& centreOfRotation) = 0;
 };
 
 }

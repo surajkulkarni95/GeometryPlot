@@ -6,7 +6,7 @@
 #include <cmath>
 
 
-geom::Circle::Circle(const Point& center, double radius, int divisions):
+geom::Circle::Circle(const p2t::Point& center, double radius, int divisions):
     center_(center),
     radius_(radius),
     divisions_(divisions)
@@ -15,7 +15,7 @@ geom::Circle::Circle(const Point& center, double radius, int divisions):
 
     for(int i = 0; i < divisions_; ++i)
     {
-        points_.emplace_back(Point(center_.x + radius_*std::cos(i*dTheta), center_.y + radius_*std::sin(i*dTheta)));
+        points_.emplace_back(new p2t::Point(center_.x + radius_*std::cos(i*dTheta), center_.y + radius_*std::sin(i*dTheta)));
     }
 }
 

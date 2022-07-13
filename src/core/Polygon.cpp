@@ -4,14 +4,14 @@
 #include <math.h>
 
 
-geom::Polygon::Polygon(const std::vector<Point>& points):
+geom::Polygon::Polygon(const std::vector<p2t::Point*>& points):
     ClosedShape(points),
     n_(points.size())
 {
 
 }
 
-geom::Polygon::Polygon(const Point& center, int numberOfSides, double side, double angleWrtXAxis):
+geom::Polygon::Polygon(const p2t::Point& center, int numberOfSides, double side, double angleWrtXAxis):
     center_(center),
     n_(numberOfSides)
 {
@@ -21,9 +21,8 @@ geom::Polygon::Polygon(const Point& center, int numberOfSides, double side, doub
 
     for(int i = 0; i < n_; ++i)
     {
-        points_.emplace_back(Point(center_.x + radius*std::cos(angleWrtXAxis+i*dTheta),
+        points_.emplace_back(new p2t::Point(center_.x + radius*std::cos(angleWrtXAxis+i*dTheta),
             center_.y + radius*std::sin(angleWrtXAxis+i*dTheta)));
-
     }
 }
 

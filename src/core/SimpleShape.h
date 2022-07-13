@@ -14,17 +14,16 @@ class SHARED_EXPORT SimpleShape: public IShape
 {
 public:
     SimpleShape() = default;
-    SimpleShape(const std::vector<Point>& points);
+    SimpleShape(const std::vector<p2t::Point*>& points);
 
-    virtual ~SimpleShape() = default;
+    virtual ~SimpleShape();
 
+    virtual void scale(double scalingFactor) override;
 
-    virtual void scale(double scalingFactor);
-
-    virtual void rotate(double angleInRadians, const Point& centreOfRotation);
+    virtual void rotate(double angleInRadians, const p2t::Point& centreOfRotation) override;
 
 protected:
-    std::vector<Point> points_;
+    std::vector<p2t::Point*> points_;
 };
 
 }

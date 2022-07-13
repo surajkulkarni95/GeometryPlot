@@ -11,7 +11,7 @@ namespace geom
 class SHARED_EXPORT Spline: public SimpleShape
 {
 public:
-	Spline(const std::vector<Point>& points);
+	Spline(const std::vector<p2t::Point*>& points);
 
 	void writeParametric(const std::string& fileName) override;
 
