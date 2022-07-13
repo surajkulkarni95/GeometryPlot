@@ -5,7 +5,7 @@ project(GeometryPlot)
 set(CMAKE_POSITION_INDEPENDENT_CODE ON)
 OPTION (BUILD_SHARED_LIBS "Build Shared Libraries" ON)
 
-include_directories(src/core src/writer src/poly2tri src/)
+include_directories(src/core src/writer src/poly2tri src/matrix src/)
 
 add_compile_definitions(P2T_SHARED_EXPORTS)
 
@@ -17,6 +17,9 @@ add_library(core SHARED src/core/Point.cpp src/core/Line.cpp src/core/Circle.cpp
 
 add_library(poly2tri SHARED src/poly2tri/common/shapes.cc src/poly2tri/sweep/advancing_front.cc src/poly2tri/sweep/cdt.cc src/poly2tri/sweep/sweep.cc src/poly2tri/sweep/sweep_context.cc)
 
+add_library(matrix SHARED src/matrix/SplineMatrix.cpp)
+
 target_link_libraries(core poly2tri)
 target_link_libraries(core writer)
+target_link_libraries(core matrix)
 target_link_libraries(sketcher core)
