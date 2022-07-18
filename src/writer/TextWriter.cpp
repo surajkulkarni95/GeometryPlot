@@ -17,7 +17,5 @@ void geom::TextWriter::write()
     for(const auto& point: points_)
         output_ << *point << std::endl;
 
-    output_ << *points_.front() << std::endl;
-
     of << output_.str();
 }

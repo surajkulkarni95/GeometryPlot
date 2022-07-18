@@ -23,13 +23,6 @@ public:
         output_ << name << " = " << parameter << std::endl;
     }
 
-    /*template<>
-    void addParameter(const std::string& name, const Point& point)
-    {
-        output_ << name << " = " << point << std::endl;
-    }
-    */
-
     void write() override;
 
 private:

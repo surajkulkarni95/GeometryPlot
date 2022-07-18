@@ -4,6 +4,7 @@
 #include "Polygon.h"
 #include "Constants.h"
 #include "poly2tri.h"
+#include "Spline.h"
 
 #include <cmath>
 
@@ -11,7 +12,8 @@ using p2t::Point;
 using geom::Line;
 using geom::Circle;
 using geom::Polygon;
-
+using geom::Spline;
+using geom::SplineBoundary;
 
 int main(int argc, char* argv[])
 {
@@ -37,5 +39,21 @@ int main(int argc, char* argv[])
     Polygon hexagon(O, 12, 2.5, constants::pi/6);
     hexagon.writeText("HexagonText.txt");
     hexagon.writeSTL("hexagon.stl", "hexagon");
+
+    std::vector<Point> pts;
+    pts.push_back(Point(0, 0));
+    pts.push_back(Point(0.25, 1));
+    pts.push_back(Point(1, 2));
+
+    SplineBoundary left;
+    left.boundaryType = tk::spline::second_deriv;
+    left.value = 1.;
+    
+    SplineBoundary right = left;
+
+    Spline spline(pts, tk::spline::cspline, left, right);
+    spline.writeParametric("SplineParameter.txt");
+    spline.writeText("SplineText.txt");
+
     return 0;
 }
